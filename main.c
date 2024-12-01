@@ -6,7 +6,7 @@
 #define u10 -3
 #define u20 5
 #define start 0.0
-#define finish 10.0
+#define finish 1.0
 #define n 1000
 #define lamda1 -20
 #define lamda2 -2
@@ -59,7 +59,7 @@ void answer(double *points_answer, double  *points_x)
 {
     for(int i = 0; i < n; ++i)
     {
-        points_answer[i] = 0.5 * (u10 + u20) * exp(lamda1 * points_x[i])+  0.5 * (u10 - u20) * exp(lamda2 * points_x[i]);
+        points_answer[i] = 0.5 * (u10 + u20) * exp(lamda1 * points_x[i]) -  0.5 * (u10 - u20) * exp(lamda2 * points_x[i]);
     }
 }
 
@@ -75,7 +75,7 @@ int main()
     }
     answer(answer_points, x_points);
     // x_points[0] = 0;
-    file_write(f,f,x_points,u1_points);
+    file_write(f,f,x_points,u2_points);
     file_write(f1,f1,x_points, answer_points);
     
 }
