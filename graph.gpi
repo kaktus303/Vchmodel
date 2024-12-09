@@ -5,5 +5,5 @@ set grid
 set yrange [-4:4]
 set xrange[-5:15]
 set title "Method graph" font "Helvetica Bold, 20"
-plot "test.txt" with lines lw 3, "answer.txt" with lines lw 2
+plot "p53.txt" with lines lw 3, "mdm2.txt" with lines lw 2, "signal.txt" with lines lw 3
 pause -1

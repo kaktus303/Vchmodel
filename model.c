@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define tau0 0
-#define x0 0
-#define y0 0
-#define s0 10
+#define tau0 0.0
+#define x0 0.067
+#define y0 1.0168   
+#define s0 0.328
 #define Alfas 2.7
 #define Alfay 0.8
 #define Betax 0.9
 #define Betay 1.2
 #define Betas 0.9
 #define Alfaxy 1.5
-#define n 1000
+#define n 10000
 #define start 0.0
-#define finish 10.0
+#define finish 100.0
 #define number 4
 double ksi(double t)
 {
@@ -107,7 +107,7 @@ double ABM(double *t_points, double *x_points, double *y_points, double *s_point
 int main()
 {
     double *t_points = malloc(sizeof(double) * n), *x_points = malloc(sizeof(double) * n), *y_points = malloc(sizeof(double) * n), *s_points = malloc(sizeof(double) * n);
-    FILE *f = fopen("test.txt", "w"), *f1 = fopen("answer.txt", "w");
+    FILE *fs = fopen("signal.txt", "w"), *fx = fopen("p53.txt", "w"), *fy = fopen("mdm2.txt", "w");
     t_filling(t_points);
     // Eiler(x_points,u1_points,u2_points);
     // ABM(x_points, u1_points, u2_points);
@@ -119,6 +119,8 @@ int main()
     }
     // answer(answer_points, x_points);
     // x_points[0] = 0;
-    file_write(f, f, t_points, s_points);
+    file_write(fs, fs, t_points, s_points);
+    file_write(fx, fx, t_points, x_points);
+    file_write(fy, fy, t_points, y_points);
     // file_write(f1, f1, x_points, answer_points);
 }
