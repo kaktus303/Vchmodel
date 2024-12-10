@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define tau0 0.0
+#define tau0 0.0        
 #define x0 0.067
 #define y0 1.0168   
 #define s0 0.328
